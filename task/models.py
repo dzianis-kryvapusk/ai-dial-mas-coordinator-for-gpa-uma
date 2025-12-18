@@ -20,3 +20,9 @@ class CoordinationRequest(BaseModel):
         default=None,
         description="**Optional**: Additional instructions to Agent."
     )
+
+class CoordinationRequestWrapper(BaseModel):
+    agent_calls: list[CoordinationRequest] = Field(
+        default_factory=list,
+        description="List of necessary agent calls"
+    )
